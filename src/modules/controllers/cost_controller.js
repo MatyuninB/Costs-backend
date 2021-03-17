@@ -1,4 +1,3 @@
-const { reduce } = require('underscore');
 const Costs = require('../../db/models/costs/index.js');
 
 
@@ -10,8 +9,6 @@ module.exports.parsAllCosts = (req, res) => {
 
 module.exports.setNewCost = (req, res) => {
   let cost = new Costs (req.body);
-  console.log(req.body)
-
   cost.save().then(res.send("succes"));
 }
 
